@@ -2,7 +2,7 @@ module github.com/minisource/apiclients
 
 go 1.23.4
 
-require github.com/minisource/common_go v0.0.4-0.20250113150519-70a469ecb2df
+require github.com/minisource/common_go v0.0.4-0.20250113220731-3158f2a8e7e2
 
 require (
 	github.com/andybalholm/brotli v1.1.0 // indirect

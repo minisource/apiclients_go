@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	jwtManager := services.NewJWTManager("notifier", "evuR6Oh5V5wQ_ZsKUYBvfVYIij", "http://127.0.0.1:5001/api/v1/oauth/GenerateToken")
+	jwtManager := services.NewJWTManager("notifier", "evuR6Oh5V5wQ_ZsKUYBvfVYIij", "http://127.0.0.1:5001")
 	for {
 		client := helper.APIClient{
 			BaseURL:    "http://127.0.0.1:5000",
