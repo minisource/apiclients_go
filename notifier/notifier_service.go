@@ -5,6 +5,8 @@ import (
 	"github.com/minisource/common_go/http/helper"
 )
 
+var notifierService *NotifierService
+
 type NotifierService struct {
 	client *helper.APIClient
 }
@@ -13,6 +15,10 @@ func NewNotifireService(client *helper.APIClient) *NotifierService {
 	return &NotifierService{
 		client: client,
 	}
+}
+
+func GetNotifierService() *NotifierService {
+	return notifierService
 }
 
 func (s *NotifierService) SendSMS(req models.SMSRequest) (error) {

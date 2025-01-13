@@ -5,6 +5,8 @@ import (
 	"github.com/minisource/common_go/http/helper"
 )
 
+var authService *AuthService
+
 type AuthService struct {
 	client *helper.APIClient
 }
@@ -13,6 +15,10 @@ func NewAuthService(client *helper.APIClient) *AuthService {
 	return &AuthService{
 		client: client,
 	}
+}
+
+func GetAuthService() *AuthService {
+	return authService
 }
 
 func (s *AuthService) ValidateToken(req models.ValidateTokenReq) (*models.ValidateTokenRes, error) {
