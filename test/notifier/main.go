@@ -13,7 +13,6 @@ import (
 func main() {
 	jwtManager := services.NewJWTManager("notifier", "evuR6Oh5V5wQ_ZsKUYBvfVYIij", "http://127.0.0.1:5001/api/v1/oauth/GenerateToken")
 	for {
-		time.Sleep(5 * time.Second)
 		client := helper.APIClient{
 			BaseURL:    "http://127.0.0.1:5000",
 			JWTManager: jwtManager,
@@ -27,5 +26,6 @@ func main() {
 		if err != nil {
 			fmt.Printf("failed to send SMS: %v\n", err)
 		}
+		time.Sleep(5 * time.Second)
 	}
 }
