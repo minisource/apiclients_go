@@ -11,8 +11,8 @@ type AuthService struct {
 	client *helper.APIClient
 }
 
-func NewAuthService(client *helper.APIClient) *AuthService {
-	return &AuthService{
+func NewAuthService(client *helper.APIClient) {
+	authService = &AuthService{
 		client: client,
 	}
 }

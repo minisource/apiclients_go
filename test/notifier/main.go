@@ -17,7 +17,8 @@ func main() {
 			BaseURL:    "http://127.0.0.1:5000",
 			JWTManager: jwtManager,
 		}
-		service := notifier.NewNotifireService(&client)
+		notifier.NewNotifireService(&client)
+		service := notifier.GetNotifierService()
 		err := service.SendSMS(models.SMSRequest{
 			To:       "+1912",
 			Body:     "123456",

@@ -11,8 +11,8 @@ type NotifierService struct {
 	client *helper.APIClient
 }
 
-func NewNotifireService(client *helper.APIClient) *NotifierService {
-	return &NotifierService{
+func NewNotifireService(client *helper.APIClient) {
+	notifierService = &NotifierService{
 		client: client,
 	}
 }
