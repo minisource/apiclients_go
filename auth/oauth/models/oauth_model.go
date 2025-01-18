@@ -1,9 +1,12 @@
 package models
 
-type ValidateTokenReq struct {
-	Token     string `json:"token"`
+type ValidateOAuthTokenReq struct {
+	Token    string   `json:"token"`
+	Scop     string   `json:"scope,omitempty"`
+	Audience *[]string `json:"audience,omitempty"`
 }
-type ValidateTokenRes struct {
+
+type ValidateOAuthTokenRes struct {
 	Active    bool     `json:"active"`
     Aud       []string `json:"aud"`
     ClientID  string   `json:"client_id"`

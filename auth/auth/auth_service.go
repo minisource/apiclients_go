@@ -1,9 +1,10 @@
 package auth
 
 import (
-	"github.com/minisource/apiclients/auth/models"
+	"github.com/minisource/apiclients/auth/auth/models"
 	"github.com/minisource/common_go/http/helper"
 )
+
 
 var authService *AuthService
 
@@ -21,14 +22,14 @@ func GetAuthService() *AuthService {
 	return authService
 }
 
-func (s *AuthService) ValidateToken(req models.ValidateTokenReq) (*models.ValidateTokenRes, error) {
+func (s *AuthService) ValidateAccessToken(req models.ValidateAccessTokenRequest) (*models.ValidateAuthTokenRes, error) {
 	data, err := s.client.MakeRequest("POST", ValidateToken, req)
 	if err != nil {
 		return nil, err
 	}
 
 	// Prepare a variable to hold the deserialized result (User in this case)
-	var token *models.ValidateTokenRes
+	var token *models.ValidateAuthTokenRes
 
 	// Use the GenericDeserializer to deserialize the response
 	err = helper.DeserializeResponse(data, &token)

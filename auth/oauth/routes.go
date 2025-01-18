@@ -1,4 +1,4 @@
-package auth
+package oauth
 
 const(
 	GenerateToken = "/api/v1/oauth/GenerateToken"
