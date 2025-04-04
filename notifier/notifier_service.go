@@ -22,10 +22,10 @@ func GetNotifierService() *NotifierService {
 }
 
 func (s *NotifierService) SendSMS(req models.SMSRequest) (error) {
-	_, err := s.client.MakeRequestWithAuthorization("POST", SMSRouter, req)
-	if err != nil {
-		return err
-	}
+	err := s.client.PostJSON(SMSRouter, req, nil)
+    if err != nil {
+        return err
+    }
 
 	return nil
 }
