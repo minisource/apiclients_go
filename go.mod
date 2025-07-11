@@ -1,4 +1,4 @@
-module github.com/minisource/apiclients
+module github.com/minisource/apiclients_go
 
 go 1.23.4
 
