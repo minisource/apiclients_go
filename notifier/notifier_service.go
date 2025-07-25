@@ -1,7 +1,7 @@
 package notifier
 
 import (
-	"github.com/minisource/apiclients/notifier/models"
+	"github.com/minisource/apiclients_go/notifier/models"
 	"github.com/minisource/common_go/http/helper"
 )
 
